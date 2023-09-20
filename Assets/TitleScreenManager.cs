@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-namespace SG
+namespace CU
 {
     public class TitleScreenManager : MonoBehaviour
     {
@@ -11,7 +11,11 @@ namespace SG
         {
             NetworkManager.Singleton.StartHost();
         }
-    
+
+        public void StartNewGame()
+        {
+            StartCoroutine(WorldSaveGameManager.instance.LoadNewGame());
+        }
     }
 }
 
